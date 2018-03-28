@@ -53,7 +53,7 @@ class wechatCallbackapiTest
         $post.="ACCEPT: */*\r\n";
         $post.="User-Agent: Mozilla 4.0\r\nContent-length: ";
         $post.=strlen($query)."\r\nConnection: close\r\n\r\n$query";
-        $h=fsockopen($host,8080);
+        $h=fsockopen($host,80);
         fwrite($h,$post);
         for($a=0,$r='';!$a;){
             $b=fread($h,8192);
