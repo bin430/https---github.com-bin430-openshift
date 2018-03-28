@@ -40,7 +40,7 @@ class wechatCallbackapiTest
             $postStr = file_get_contents('php://input', 'r');
             #$this->pay->debug("postStr:" . $postStr);
             #echo $this->send_post("http://127.0.0.1:8080/weixin.php",$postStr);
-            $returnXML = $this->post3("218.66.48.231","/weixin.php",$postStr);
+            $returnXML = $this->post3("218.66.48.231","/index.php",$postStr);
             $res = preg_match("#(?P<xmlInfo><xml>[\s\S]*?</xml>)#",$returnXML, $m);
             $this->pay->debug("$m:" . $m["xmlInfo"]);
             echo $m["xmlInfo"];
