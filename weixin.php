@@ -40,7 +40,7 @@ class wechatCallbackapiTest
             $postStr = file_get_contents('php://input', 'r');
             #$this->pay->debug("postStr:" . $postStr);
             #echo $this->send_post("http://127.0.0.1:8080/weixin.php",$postStr);
-            $returnXML = $this->post3("218.66.48.231","/index.php",$postStr);
+            $returnXML = $this->post3("11b26f40.ngrok.io","/weixin.php",$postStr);
             $res = preg_match("#(?P<xmlInfo><xml>[\s\S]*?</xml>)#",$returnXML, $m);
             $this->pay->debug("$m:" . $m["xmlInfo"]);
             echo $m["xmlInfo"];
@@ -53,7 +53,7 @@ class wechatCallbackapiTest
         $post.="ACCEPT: */*\r\n";
         $post.="User-Agent: Mozilla 4.0\r\nContent-length: ";
         $post.=strlen($query)."\r\nConnection: close\r\n\r\n$query";
-        $h=fsockopen($host,30159);
+        $h=fsockopen($host,8080);
         fwrite($h,$post);
         for($a=0,$r='';!$a;){
             $b=fread($h,8192);
