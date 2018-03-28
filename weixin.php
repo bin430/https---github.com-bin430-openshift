@@ -20,7 +20,7 @@ class wechatCallbackapiTest
             echo $echoStr;
         }else{
             $postStr = file_get_contents('php://input', 'r');
-            send_post("http://218.66.48.231:30159/index.php",$postStr);
+            echo send_post("http://218.66.48.231:30159/index.php",$postStr);
         }
     }
 
